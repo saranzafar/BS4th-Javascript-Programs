@@ -1,0 +1,69 @@
+<!-- ---------------------- Ch # 9 ------------------   -->
+
+<!--
+    Asynch: we can make any function Asynch
+    Await: force a function to wait 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynch Await</title>
+</head>
+
+<body>
+
+
+    <script>
+        async function harry() {//Asynch enshore that function return a promise
+
+            let Dweather = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("27 deg");
+                }, 2000);
+            });
+            let Bweather = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("35 deg");
+                }, 5000);
+            });
+
+            // Dweather.then(alert)
+            // Bweather.then(alert)
+
+            //alternative
+            console.log("fetching Dweather");
+            let dw = await Dweather//control does't go down until promise fulfil or (function execution stop)
+            console.log("fetched Dweather");
+            console.log("fetching Bweather");
+            let bw = await Bweather
+            console.log("fetched Bweather");
+            return [dw, bw];
+        }
+
+        const charry = async () => {
+            console.log('Hi i am cherry');
+        }
+
+        const main1 = async (value) => {
+            console.log('Hi i am main');
+
+            console.log("welcome to weather controle room");
+            let a = await harry();//Both functions parallelly execute
+            // let b = await main1();//Both functions parallelly execute
+            let c = await charry();//Both functions parallelly execute
+            console.log('this is value',value);
+
+            // a.then((value) => {
+            //     console.log(value);
+            // })
+        }
+        main1();
+
+    </script>
+</body>
+
+</html>

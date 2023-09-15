@@ -1,0 +1,29 @@
+<!-- ------------------ Exercise 8 ------------------ 
+
+play audio using js and make alarm clock 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <button id="btn">click me</button>
+    <script>
+
+        let aud = new Audio('Audio/music.mp3')
+        let btn = document.getElementById('btn')
+        btn.addEventListener('click', () => {
+            let a = aud.play()
+            console.log(a);
+        })
+
+    </script>
+</body>
+
+</html>

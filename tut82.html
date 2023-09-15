@@ -1,0 +1,56 @@
+<!-- ---------------------- Exercise Ch # 11 ------------------   -->
+
+<!-- get, set, instence of Operator  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+
+<body>
+    OOPs
+
+    <script>
+        class Animal {
+            constructor(name) {
+                this._name = name;//its safe to use Underscore.
+            }
+            fly() {
+                // alert("main udd rha hu")
+            }
+            get name() {
+            // by using get we can directly use name in main function
+            // we have to use _name because we already use it as function name
+                return this._name
+            }
+            set name(newName) {
+                //by using this property we can change this._name i main function
+                this._name = newName;
+            }
+
+        }
+        class Rabbit extends Animal {
+            eatCarrot() {
+                console.log("rabbit eat carrot");
+            }
+        }
+
+        // let a = new Animal("Bruno")
+        let a = new Rabbit("Bruno")
+        a.fly()
+        console.log(a.name);
+        a.name = "Jack"
+        console.log(a.name);
+
+
+        let c = 56
+        console.log(a instanceof Animal);//reture true if class have any parent class
+        console.log(a instanceof Rabbit);//reture true if a is instance/belongs of class
+        console.log(c instanceof Animal);
+    </script>
+</body>
+
+</html>

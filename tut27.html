@@ -1,0 +1,45 @@
+<!-- ------------------- Chapter # 6 ------------------- -->
+
+<!-- alert confirm and alert  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alert confirm and prompt</title>
+</head>
+
+<body>
+    hellow world
+
+    <script>
+        /*
+         ----- problem/limitation with these functions -------- 
+        1. give old look to your website 
+        2. block remaining execution of website
+        3. its look,performance and arrival depend on browser 
+        3. it use at admin side
+        */
+
+        alert("hi i am working")
+        let a = prompt("Enter a number", 89)//default value for prompt
+        a = Number.parseInt(a);
+        alert("you entered " + a + " whose type is " + (typeof a))//it always take values as a string
+
+        let write = confirm("do you want to write it on page:");
+        if (write == true) {
+            document.write(a);
+            // document.write(a);//writing in DOM
+        }
+        else {
+            alert("please allow me to write");
+        }
+
+
+
+    </script>
+</body>
+
+</html>

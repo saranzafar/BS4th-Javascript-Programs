@@ -1,0 +1,180 @@
+<!-- ------------------ Password Generator using class ------------------ -->
+<!-- 
+    - Class Password 
+        - GenerateSuperStrongPassword
+        - GenerateStrongPassword
+        - GenerateWeakPassword
+        - GenerateFunnyPassword  
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Password</title>
+    <style>
+        .container {
+            background: linear-gradient(to right, rgb(11, 163, 11), black);
+            /* background: -webkit-linear-gradient(right, #56d8e4, #9f01ea); */
+            width: 100vw;
+            height: 100vh;
+            max-width: 1600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .box {
+            border: 2px solid white;
+            width: 30%;
+            height: 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-family: monospace;
+            border-radius: 20px;
+            margin: 10px;
+        }
+
+        .buttons {
+            text-align: center;
+
+        }
+
+        .btn {
+            color-scheme: none;
+            forced-color-adjust: none;
+            outline-color: none;
+            font-size: 18px;
+            width: 43%;
+            padding: 7px 0px;
+            border: 2px solid white;
+            background-color: transparent;
+            color: white;
+            margin: 4px;
+            border-radius: 10px;
+            font-family: monospace;
+            box-shadow: 1px 3px white;
+            outline: none;
+            transition: .2s;
+            --tw-ring-color: rgba(0, 0, 0, 0.5);
+            --tw-ring-color: rgba(0, 0, 0, 0.5);
+        }
+
+
+        .btn:hover {
+            box-shadow: 0px 0px white;
+            transform: translateY(5px);
+        }
+
+        .btn:active {
+            transform: scale(0.93);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <span id="output">Generate Password </span>
+        </div>
+
+        <div class=" buttons">
+            <button class="btn" id="btn1" type="button">Funny</button>
+            <button class="btn" id="btn2" type="button">Weak</button>
+            <button class="btn" id="btn3" type="button">Strong</button>
+            <button class="btn" id="btn4" type="button">Super Strong</button>
+        </div>
+    </div>
+
+    <script>
+        let output = document.getElementById('output')
+        let btn1 = document.getElementById('btn1')
+        let btn2 = document.getElementById('btn2')
+        let btn3 = document.getElementById('btn3')
+        let btn4 = document.getElementById('btn4')
+        let letters = "abcdefghijklmnopqrstuvwxyz"
+        let numbers = "1234567890"
+        let sepLetter = "!@#$%^&*()_+"
+        let funny = ['Funny', "password", 'error', 'bigBoss', 'WhySoSad', 'iLoveYou', 'Javascript', 'Guess', 'MyPassword', 'ChlHatt'];
+        let count = 0;
+
+        class Passwordgenerator {
+
+            funnyPassword() {
+                count = 1;
+                let password = "";
+                let rndm = ""
+                for (let index = 0; index < count; index++) {
+                    rndm = Math.floor(Math.random() * 10);
+                    password += funny[rndm];
+                }
+                output.innerHTML = password
+            }
+            weakPassword() {
+                count = 5;
+                let password = "";
+                let rndm = ""
+                for (let index = 0; index < 6; index++) {
+                    rndm = Math.floor(Math.random() * 10);
+                    password += numbers[rndm];
+                }
+                output.innerHTML = password
+            }
+            strongPassword() {
+                count = 3;
+                let password = "";
+                let rndm1 = ""
+                let rndm2 = ""
+                let rndm3 = ""
+                for (let index = 0; index < count; index++) {
+                    rndm1 = Math.floor(Math.random() * 10);
+                    rndm2 = Math.floor(Math.random() * 26);
+                    rndm3 = Math.floor(Math.random() * 10);
+                    password += numbers[rndm1] + letters[rndm2] + sepLetter[rndm3];
+                }
+                output.innerHTML = password
+            }
+
+            SuperstrongPassword() {
+                count = 4;
+                let password = "";
+                let rndm1 = ""
+                let rndm2 = ""
+                let rndm3 = ""
+                for (let index = 0; index < count; index++) {
+                    rndm1 = Math.floor(Math.random() * 10);
+                    rndm2 = Math.floor(Math.random() * 26);
+                    rndm3 = Math.floor(Math.random() * 10);
+                    password += numbers[rndm1] + letters[rndm2] + sepLetter[rndm3];
+                }
+                output.innerHTML = password
+            }
+        }
+
+
+        let obj1 = new Passwordgenerator();
+
+        btn1.addEventListener('click', () => {
+            obj1.funnyPassword()
+        });
+
+        btn2.addEventListener('click', () => {
+            obj1.weakPassword()
+        });
+
+        btn3.addEventListener('click', () => {
+            obj1.strongPassword()
+        });
+
+        btn4.addEventListener('click', () => {
+            obj1.SuperstrongPassword()
+        });
+    </script>
+</body>
+
+</html>

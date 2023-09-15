@@ -1,0 +1,29 @@
+<!-- --------------------- Ch # 7 -----------------------  -->
+
+<!--
+- tree like structure of html (right,left sibbling)
+- paranet: 
+- Sibblings: which have same parents 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness WebSite</title>
+</head>
+
+<body><div><div class="first">first</div><div class="second">Second</div>
+    </div>
+
+    <script>
+        console.log(document.body.firstChild);
+        let a = document.body.firstChild;
+        console.log(a.parentNode);//it return everything node, emptySpace, text,comments invalid etc
+        console.log(a.parentElement);//it return only valid node
+        console.log(a.firstChild.nextSibling);//remove spaces from to run this function
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!-- ------------------- Exercise no 2 Solution ---------------- -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake water and gun</title>
+    <style>
+        html,
+        body {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+        let user = prompt("Enter S, W or G");
+        let cpu1 = Math.floor(Math.random() * 3);
+        let cpu = ['S', 'W', 'G'][cpu1];
+        const match = (cpu, user) => {
+            if (cpu === user) {
+                return 'Nobody';
+            }
+            else if (cpu === 'S' && user === "W") {
+                return "cpu";
+            }
+            else if (cpu === 'S' && user === "G") {
+                return "user";
+            }
+            else if (cpu === 'G' && user === "W") {
+                return "user";
+            }
+            else if (cpu === 'G' && user === "S") {
+                return "cpu";
+            }
+            else if (cpu === 'W' && user === "S") {
+                return "user";
+            }
+            else if (cpu === 'W' && user === "G") {
+                return "cpu";
+            }
+        }
+
+        let result = match(cpu, user);
+        document.write(`CPU:${cpu}\n and User:${user}\n\nThe winner is ${result}`);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!-- ---------------------- Ch # 9 ------------------   -->
+
+<!-- multiple handlers in one promise  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        let p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(1)
+                alert('hey i am resolved');
+            }, 2000);
+        })
+
+        // this is not promise chaining, this is multiple promise handling which run parallelly 
+        p1.then((value) => {
+            console.log("promise is resolved", value);
+        });
+        p1.then(() => {
+            console.log("goodluck");
+        })
+    </script>
+</body>
+
+</html>

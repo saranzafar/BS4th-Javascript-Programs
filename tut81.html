@@ -1,0 +1,40 @@
+<!-- ---------------------- Exercise Ch # 11 ------------------   -->
+
+<!-- static methods  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+
+<body>
+    Hi OPs
+
+    <script>
+        class Animal {
+            constructor(name) {
+                // this.name = name;//1st 2nd
+                this.name = Animal.capitalization(name);//3rd
+            }
+            walk() {
+                // console.log(`Animal ${Animal.capitalization(this.name)} is walking`);//1st
+                console.log(`Animal ${this.name} is walking`);//2nd
+            }
+            static capitalization(name) {
+                return name.charAt(0).toUpperCase() + name.substr(1, name.length)//1st 2nd 3rd
+            }
+
+        }
+
+        let obj1 = new Animal('hack');//1st 3rd
+        // let obj1 = new Animal(Animal.capitalization("hack"));//2nd
+        obj1 =
+            obj1.walk();
+
+    </script>
+</body>
+
+</html>

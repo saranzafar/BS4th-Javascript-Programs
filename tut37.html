@@ -1,0 +1,46 @@
+<!-- --------------------- Ch # 7 -----------------------  -->
+
+- elem.matches
+- elem.closest
+- elem.contains
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>methods</title>
+</head>
+
+<body>
+    these are used to Search in dom
+    <div id="id1" class="box">
+        <span id="span1">this is span</span>
+        this is element 1
+    </div>
+    <div id="id2">this is element 2</div>
+
+    <script>
+        // console.log('id1');
+        let id1 = document.getElementById('id1');
+        let sp1 = document.getElementById('span1');
+        // console.log(id1);
+
+        // console.log(id1.matches('.class'));
+        // console.log(id1.matches('.box'));//return true is that id exist in element
+
+        // console.log(sp1.closest('#span1'));//closect insister that matches given css
+        // console.log(id1.closest('.box'));
+        // console.log(id1.closest('#span1'));// it searches outside of element not inside
+        console.log(sp1.closest('#id1'));// it searches outside of element not inside
+
+        // console.log(sp1.contains(sp1));
+        // console.log(sp1.contains(id1));
+
+
+
+    </script>
+</body>
+
+</html>

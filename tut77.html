@@ -1,0 +1,58 @@
+<!-- ---------------------- Exercise Ch # 11 ------------------   -->
+
+<!-- 
+Consructor
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+
+<body>
+
+    <script>
+        class Railwayform {
+            constructor(givenname, train, address) {//constructor
+                this.name = givenname
+                this.trainno = train
+                this.add = address
+            }
+            preview() {
+                alert(this.name + ": form Preview, train no is: " + this.trainno + " and address no " + this.add)
+            }
+            submit() {
+                alert(this.name + ": form Submitted, train no is: " + this.trainno)
+            }
+            cancel() {
+                alert(this.name + ": form cancelled, train no is: " + this.trainno)
+                this.trainno = 0;
+            }
+
+        }
+
+        // let harry = new Railwayform("Harry", 12212);
+        // let rohan = new Railwayform("Rohan", 12211);
+        // let rohan1 = new Railwayform("Rohan", 12213);
+
+        // harry.submit()
+        // rohan.submit()
+
+        // rohan1.cancel();
+
+        let harryForm = new Railwayform("harry", 11220, "1420 Pacific ocen");
+        harryForm.preview();
+        harryForm.submit();
+        harryForm.cancel();
+        harryForm.preview();
+
+
+        // MDN Docs official documents of Js 
+
+    </script>
+</body>
+
+</html>

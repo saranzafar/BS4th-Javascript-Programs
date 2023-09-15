@@ -1,0 +1,46 @@
+<!-- ---------------------- Ch # 8 ------------------  -->
+
+<!-- events in js  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+
+<body>
+    <button id="btn">Click me!</button>
+
+    <script>
+        let btn = document.getElementById("btn");
+        // let x = function (e) { console.log("inside eventlistener 1", e.target); }
+        // let x = function (e) { console.log("inside eventlistener 1", e.type); }
+        // let x = function (e) { console.log("inside eventlistener 1", e.currentTarget); }
+        // let x = function (e) { console.log("inside eventlistener 1", e.clientX); }
+        let x = function (e) { console.log("inside eventlistener 1", e.clientY); }
+        // 'e' is "PointerEvent/eventObject", gives details about this function
+        let y = function (e) { console.log("inside eventlistener 2"); }
+
+
+        // btn.addEventListener('click', function (e) {
+        //     console.log("inside eventlistener 1");
+        // });
+        btn.addEventListener('click', x);
+
+        // btn.addEventListener('click', function (e) {
+        //     console.log("inside eventlistener 2");
+        // });
+        // btn.addEventListener('click', y);
+
+
+        // let a = prompt("enter youe favrouit number: ");
+        // if (a == "2") {
+        //     btn.removeEventListener('click', y);
+        // }
+    </script>
+</body>
+
+</html>

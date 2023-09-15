@@ -1,0 +1,46 @@
+<!-- ---------------------- Exercise Ch # 11 ------------------   -->
+
+<!-- 
+Classes And Objects in Js:
+    class is a templet, object is a entity/way/bridge to access class.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+
+<body>
+
+    <script>
+        class Railwayform {
+            submit() {
+                alert(this.name + ": form Submitted, train no is: " + this.trainno)
+            }
+            cancel() {
+                alert(this.name + ": form cancelled, train no is: " + this.trainno)
+            }
+            fill(givenname, train) {
+                this.name = givenname
+                this.trainno = train
+            }
+        }
+
+        let harry = new Railwayform();
+        harry.fill("harry", 12212);
+        let rohan = new Railwayform();
+        let rohan1 = new Railwayform();
+        rohan.fill("Rohan", 12211);
+        rohan1.fill("Rohan", 12212);
+
+        harry.submit()
+        rohan.submit()
+
+        rohan1.cancel();
+    </script>
+</body>
+
+</html>

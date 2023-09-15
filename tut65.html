@@ -1,0 +1,79 @@
+<!-- ---------------------- Exercise 5 ------------------  -->
+
+<!-- 
+hackerMan
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hackerMan</title>
+    <style>
+        .container {
+            background-color: #000000;
+            color: rgb(30, 206, 30);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            margin: 0;
+            max-width: 1600px;
+            font-size: 1.7rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <div id="box3"></div>
+    </div>
+
+    <script>
+        let i = 0
+        while (i != 10) {
+
+            let hackfunc1 = async () => {
+
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve("hacking 2", i);
+                    }, 2000);
+                });
+            }
+
+            let hackfunc2 = async () => {
+
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve("hacking 4");
+                    }, 2000);
+                });
+
+            }
+
+            let main1 = async () => {
+                await hackfunc1().then((value) => {
+                    document.getElementById("box1").innerHTML = value
+
+                })
+                await hackfunc2().then((value) => {
+                    // console.log(value);
+                    document.getElementById("box2").innerHTML = value
+                })
+            }
+            main1();
+            i++;
+        }
+
+    </script>
+</body>
+
+</html>

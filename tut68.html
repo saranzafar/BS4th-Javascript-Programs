@@ -1,0 +1,36 @@
+<!-- ---------------------- Ch # 10 ------------------   -->
+<!-- 
+Cookies: Directly store data into browser
+cookies are seprated by comman','
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+</head>
+
+<body>
+    this is body
+</body>
+
+<script>
+    console.log(document.cookie);
+    document.cookie = "name = harry9900 saran = sarannnr";//a single set call, u can't set more thent one cookie just like this
+    // document.cookie = "name2 = harry9901";//you can set path using '/', name = "<= 4kb " cookies, total cookies on browser 20 +- 5
+    document.cookie = "name = harry9905";//update name2
+
+    let key = prompt("enter your key:")
+    let value = prompt("enter your value:")
+    document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}`//if i write key = "uyu;" error occure to solve this we use
+    // decodeURIComponent("uyu%3B=11")
+    // 'uyu;=11'
+
+    console.log(document.cookie);
+
+
+</script>
+
+</html>

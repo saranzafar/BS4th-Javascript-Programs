@@ -1,0 +1,42 @@
+<!-- ---------------------- Exercise Ch # 11 ------------------   -->
+
+<!-- 
+- prototype inheritence
+- 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+
+<body>
+    <script>
+        let a = {//an object
+            name1: 'harry',
+            run: () => {
+                alert('run 1')
+            }
+        }
+        console.log(a);
+
+        // setting prototype 
+        let p = {//2nd object
+            run: () => {
+                alert('run 2')
+            }
+        }
+        p.__proto__ = {//setting prototype of p 
+            name: "jackyie"
+        }
+
+        a.__proto__ = p;//setting prototype of 'a', which is 'p'
+        a.run();//there is no 'run()' in 'a' so  it run from its prototypr
+        console.log(a.name);
+    </script>
+</body>
+
+</html>

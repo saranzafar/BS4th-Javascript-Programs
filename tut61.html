@@ -1,0 +1,42 @@
+<!-- ---------------------- Ch # 9 ------------------   -->
+
+<!-- 
+    Error Object 
+    Throwing custome Error  
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling in js</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        try {
+            // harry
+            // throw new Error("this is custome Error");
+            // throw new ReferenceError("this is ReferenceError");
+
+            let age = prompt("Enter Your age");
+            age = Number.parseInt(age);
+            if (age > 150) {
+                throw new ReferenceError("this is probably not true");
+            }
+        } catch (error) {
+            console.log(error);
+            console.log(error.name);//name of error
+            console.log(error.message);//why error occure
+            console.log(error.stack);//why error occure
+            // MDN Reference 
+        }
+    </script>
+</body>
+
+</html>

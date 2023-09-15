@@ -1,0 +1,106 @@
+<!-- ----------------------Exercise Ch # 9 ------------------   -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question and Answer</title>
+</head>
+
+<body>
+    <script>
+        // Qno1: using promises load a program  using 
+        // const loadScr = async (src) => {
+        //     return new Promise((resolve, reject) => {
+
+        //         let script = document.createElement('script')
+        //         script.src = src;
+        //         script.onload = () => {
+        //             resolve("Done SuccessFully!: " + src);
+        //         }
+        //         document.head.append(script);
+        //     });
+        // }
+        // const a = loadScr('practice.js');
+        // a.then((value) => {
+        //     console.log(value);
+        // })
+
+
+        // Qno2: using promises load a program  using asynch, await
+        // const main1 = async () => {
+        //     console.log(new Date().getMilliseconds());
+        //     let a = await loadScr('practice.js');
+        //     console.log(a);
+        //     console.log(new Date().getMilliseconds());
+
+        // }
+        // main1();
+
+        // Qno3: after 3 sec throw Error and handle it
+        // let p1 = () => {
+
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             reject(new Error("this is not correct"));
+        //         }, 2000);
+        //     });
+        // }
+        // let a = async () => {
+        //     try {
+        //         let c = await p1();
+        //         console.log(c);
+        //     }
+        //     catch (error) {
+        //         console.log("this error has been handled");
+        //     }
+        // }
+        // a();
+
+        // Qno3: using promise
+        let p1 = async () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(10);
+                }, 1000);
+            })
+        }
+        let p2 = async () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(20);
+                }, 2000);
+            })
+        }
+        let p3 = async () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    reject(35);
+                    // resolve(35);
+                }, 3000);
+            })
+        }
+
+        const run = async () => {
+            console.time('run')
+            // let a1 = await p1();//fetching product one-by-one
+            // let a2 = await p2();//fetching product one-by-one
+            // let a3 = await p3();//fetching product one-by-one
+            // console.log(a1, a2, a3);
+
+            let a1 = p1();//fetching product one-by-one
+            let a2 = p2();//fetching product one-by-one
+            let a3 = p3();//fetching product one-by-one
+            let a1a2a3 = await Promise.allSettled([a1, a2, a3]);//fetching product parallelly
+            console.log(a1a2a3);
+
+            console.timeEnd('run');
+        }
+        run();
+
+    </script>
+</body>
+
+</html>

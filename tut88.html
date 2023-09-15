@@ -1,0 +1,57 @@
+<!-- ---------------------- Ch # 12 ------------------   -->
+
+<!-- --- Scopes in js ---
+- local scope
+- globle scope
+- function scope  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+
+<body>
+    Hellow we are trying to understand the scope
+
+
+    <script>
+        // --------- block scope ---------
+        {
+            // const a1 = 15;// it is block scope
+            // let a1 = 15;// it is block scope
+            var a1 = 15;// it is globle scope
+            console.log(a1);
+        }
+        console.log(a1);
+
+
+        // --------- function scope ---------
+        function run() {
+            // let a2 = "hi everyone"//it is block scope
+            // const a2 = "hi everyone"//it is block scope
+            var a2 = "hi everyone"//it is globle scope but its scope will remain inside function
+            console.log(a2);
+        }
+        run()
+        // console.log(a2);//throw error for every type of decleration 
+
+        
+        // --------- globle scope ---------
+        let a3 = 'globle'
+
+        {
+            console.log(a3);
+        }
+      (  function run2() {
+            console.log(a3);
+        })()
+        console.log(a3);
+
+    </script>
+</body>
+
+</html>

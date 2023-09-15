@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Contact us Form</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="text">
+            Contact us Form
+        </div>
+        <form action="#">
+            <label for="title">Todo Title</label>
+            <input type="text" id="title">
+
+            <label for="desc">Todo Title</label>
+            <input type="text" id="desc">
+
+            <button type="submit" id="submit">Submit</button>
+            <button id="deleteBtn">Delete</button>
+
+        </form>
+        <div id="todo">
+
+        </div>
+    </div>
+
+
+    <script>
+        let submit = document.getElementById("submit")
+        let title = document.getElementById("title")
+        let desc = document.getElementById("desc")
+        let todo = document.getElementById("todo")
+        submit.addEventListener("click", (e) => {
+            e.preventDefault()
+            let titlec = title.value
+            let descc = desc.value
+
+            localStorage.setItem('todo', JSON.stringify([titlec, descc]))
+            console.log(e);
+            todo.innerHTML = `
+            <h1>${titlec}</h1>
+            <p>${descc}</p>
+            `
+            title.value = ""
+            desc.value = ""
+        });
+
+
+        deleteBtn.addEventListener("click", (e) => {
+            localStorage.removeItem('todo');
+            todo.innerHTML = ""
+        });
+
+    </script>
+</body>
+
+</html>

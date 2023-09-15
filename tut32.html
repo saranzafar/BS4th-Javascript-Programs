@@ -1,0 +1,30 @@
+<!-- --------------------- Ch # 7 -----------------------  -->
+
+<!-- Children -->
+<!-- Descendant -->
+<!-- text node -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing children using js</title>
+</head>
+
+<body>
+    Hellow world]
+    <p>this is para</p>
+    Scripttag is child of body, body & head are child of html<br>
+    Descendant node: all node/tags inside parant is descendent
+    <script>
+        console.log(document.body.firstChild);
+        console.log(document.body.lastChild);
+        console.log(document.body.children);
+        console.log(document.body.childNodes);// space is 'text',this does't return as an array 
+        let arr = Array.from(document.body.childNodes)
+        console.log(document.body.childNodes);// Now this is array
+    </script>
+</body>
+
+</html>

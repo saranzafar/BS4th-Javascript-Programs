@@ -1,0 +1,61 @@
+<!-- ---------------------- Exercise Ch # 8 ------------------  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+    <style>
+        .bulb {
+            background-color: yellow;
+        }
+
+        .bulb-container {
+            height: 134px;
+            width: 134px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <button onclick="console.log('clicked 1');">Click me!</button>
+    <button onclick="console.log('clicked 2');">Click me!</button>
+    <button onclick="console.log('clicked 3');">Click me!</button>
+
+    <h1>Bookmark</h1> -->
+    <!-- <button id="btn1"> <a href="https://google.com" target="_blank">Google</a></button> -->
+    <!-- <button id="btn1">Google</button> -->
+
+
+    <div id="bulb" class="bulb bulb-container">
+
+    </div>
+
+    <script>
+        // Qno1: goto google.com 
+
+        // document.getElementById("btn1").addEventListener('click', () => {
+        //     // let url = 'https://google.com';
+        //     window.location = "https://google.com";
+        //     window.focus({
+        //     });
+        // });
+
+        // Qno2: goto fetch API, fetch API
+        // setInterval(async function () {
+        //     let url = "https://jsonplaceholder.typicode.com/todos/1"
+        //     console.log(await fetchContent(url));
+        // }, 3000);
+
+
+        // Qno3: create gloing bulb
+        setInterval(async function () {
+            document.querySelector('#bulb').classList.toggle('bulb')
+        }, 300);
+
+    </script>
+</body>
+
+</html>

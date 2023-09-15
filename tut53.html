@@ -1,0 +1,110 @@
+<!-- ---------------------- Ch # 9 ------------------  -->
+
+
+<!-- - handling errors in Js
+- call back hell 
+- pyramid of doom  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Hellow world
+
+    <script>
+
+        // ----------- Call-Back Functions -----------
+        // A call back function is a function passed into another function as an argument which is then invoked inside the outer function to complete an action. 
+        // Example:
+        function loadScript(src, calback) {
+
+            // creating tag
+            let script = document.createElement('script')
+            script.src = src;
+
+
+            // show message when script loaded
+            script.onload = function () {
+                console.log("script loaded", src);
+                calback(null, src);
+            }
+            // show error when script not found
+            script.onerror = function () {
+                console.log("Error loading script with SRC:: " + src);
+                calback(new Error("Src got Some error"));
+            }
+
+            // deploying script in html body
+            document.body.appendChild(script);//append and appendChild
+
+        }
+
+        //callback function no 1
+        function hellow(error, src) {
+            if (error) {
+                console.log(error);
+                return;
+            }
+            alert("hellow world" + src);
+        }
+        //callback function no 2 Optional
+
+        // 1. Problem: inversion of control
+        // solution: promisis
+
+        // problem: call-back hell,pyramid of doom, it is not good method because it create a lot of problem, either it is not bad
+        loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js', function goodmorning(error, src) {
+            if (error) {
+                console.log(error);
+                sendMessageToCeo();
+                return;
+            }
+            loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap2.bundle.min.js', function goodmorning(error, src) {
+                if (error) {
+                    console.log(error);
+                    sendMessageToCeo()
+                    return;
+                }
+                loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap3.bundle.min.js', function goodmorning(error, src) {
+                    if (error) {
+                        console.log(error);
+                        sendMessageToCeo()
+                        return;
+                    }
+                    loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap4.bundle.min.js', function goodmorning(error, src) {
+                        if (error) {
+                            console.log(error);
+                            sendMessageToCeo()
+                            return;
+                        }
+                        loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap5.bundle.min.js', function goodmorning(error, src) {
+                            if (error) {
+                                console.log(error);
+                                sendMessageToCeo()
+                                return;
+                            }
+                            loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap6.bundle.min.js', function goodmorning(error, src) {
+                                if (error) {
+                                    console.log(error);
+                                    sendMessageToCeo()
+                                    return;
+                                }
+                            });
+                        });
+                    });
+                });
+            });
+        });
+
+
+
+    </script>
+</body>
+
+</html>

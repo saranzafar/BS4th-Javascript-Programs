@@ -1,0 +1,49 @@
+<!-- ---------------------- Exercise Ch # 11 ------------------   -->
+
+<!-- inheritence  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+
+<body>
+
+
+    <script>
+        class animal {
+            constructor(name, color) {//class 1, parent class
+                this.name = name;
+                this.color = color;
+            }
+            run() {
+                console.log(this.name, "is running whose color is", this.color);
+            }
+            shout() {
+                console.log(this.name, "is shouting whose color is", this.color);
+            }
+        }
+
+        class monkey extends animal {//class 2, child class
+            eatBanana() {//we can use class 1 all methods
+                console.log(this.name, "is Eating Banana whose color is", this.color);
+            }
+            hide() {
+                console.log(`${this.name} is hiding`);
+            }
+        }
+
+        let ani = new animal("Snake", "green");
+        let mon = new monkey("monkey", "black");
+        ani.run()
+        ani.shout()
+        mon.eatBanana()
+        mon.run()
+        mon.hide()
+    </script>
+</body>
+
+</html>

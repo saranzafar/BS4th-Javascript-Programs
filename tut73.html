@@ -1,0 +1,46 @@
+<!-- ---------------------- Exercise 6 ------------------   -->
+
+<!-- 
+- create Todo list to use local storage
++- You can Delete and Access Todo list 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list</title>
+</head>
+
+<body>
+
+
+    <script>
+        let input = prompt('1.Show LocalStorage\n2.Add In list\n3.Delete from list\n4. Clear LocalStorage');
+        if (input == 1) {
+            console.log("Value In LocalStorage is:", localStorage);
+
+        }
+        else if (input == 2) {
+            let key = prompt('Enter Key');
+            let value = prompt('Enter value');
+            localStorage.setItem(key, value);
+            alert("value Set")
+
+        }
+        else if (input == 3) {
+            let key1 = prompt('Enter Key');
+            localStorage.removeItem(key1);
+            alert("value removed")
+        }
+        else if (input == 4) {
+            localStorage.clear()
+            alert("LocalStorage cleared")
+
+        }
+        console.log(input);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!-- ---------------------- Ch # 12 ------------------   -->
+<!-- 
+- Destructuring: unpack value from array/Properties from objects into distinct variable
+- Spread Operator
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance JS Concepts</title>
+</head>
+
+<body>
+    hi Js
+
+    <script>
+
+        //destructuring
+        let arr = [3, 5, 8, 77, 34, 4, 56];
+        // no need to do this
+        // let a = arr[0]
+        // let b = arr[1]
+
+        // use this 
+        // let [a, b, c, ...rest] = arr //Output: 3 5 8 (4) [77, 34, 4, 56]
+        // let [a, , , b, ...rest] = arr //Output: 3 77 (3) [34, 4, 56]
+        // console.log(a, b, rest);
+        let { a, b } = { a: 1, b: 5 } //initilization of a,b
+        console.log(a, b);
+
+        //spread operator
+        let arr1 = [3, 5, 8, 77, 34, 4, 56]
+        let obj1 = { ...arr1 }//converting array to object
+        console.log(obj1);
+
+        function sum(v1, v2, v3) {
+            return v1 + v2 + v3;
+        }
+        console.log(sum(3, 5, 8));//instead of array directly giving value
+        console.log(sum(...arr1));//giving array to function
+
+        let obj2 = {
+            name: "harrry",
+            company: "XYZ@Company.com",
+            address: "address if not found"
+        }
+        console.log({ ...obj2 });
+        console.log({ ...obj2, name: 'john',company:"techno" });//changing value of obj, override values
+        console.log({ name: 'john',company:"techno" ,...obj2});//changing value of obj, does't override values
+    </script>
+</body>
+
+</html>

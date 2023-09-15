@@ -1,0 +1,33 @@
+<!-- ---------------------- Ch # 8 ------------------  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inner html</title>
+</head>
+
+<body>
+    <span>hey i am span </span>
+    <span>hey i am span </span>
+    <span hidden id="hide">hey i am the span </span>
+    <script>
+        // 
+        let x = document.getElementsByTagName('span')[0];
+
+        let y = document.body.firstElementChild.nodeName;
+        console.log(y);
+
+        // x.innerHTML = "this is new text entered by ";
+        console.log(x.outerHTML);  //return html
+        console.log(document.body.textContent);//it return whole html and js
+
+        let hide = document.getElementById('hide');
+        hide.hidden = false;
+
+    </script>
+</body>
+
+</html>

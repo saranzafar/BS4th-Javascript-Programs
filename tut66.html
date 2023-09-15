@@ -1,0 +1,43 @@
+<!-- ---------------------- Ch # 10------------------   -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+
+<body>
+    <script>
+        // AJAX: Asynchoronous Jaxascript And XML, older method to access network access
+
+
+        // let p = fetch('https://goweather.herokuapp.com/weather/Ny');// here we get promise
+        // let p = fetch("https://api.publicapis.org/entries");
+        // let p = fetch("https://catfact.ninja/fact");
+        let p = fetch("https://api.coindesk.com/v1/bpi/currentprice.json");
+        // Why two then? 
+        // 1. status and ok
+        // 2. value
+        p.then((response) => {//By Default it is get request
+            console.log(response.status);
+            console.log(response.ok);
+
+            // Requests headers: we give aditional info about our req
+            // response headers: output of req headers
+            console.log(response.headers);
+
+            return response.json;// a promise which return in the form of json/text(it is body reading method)
+            // return response.text;
+
+
+
+        }).then((value) => {
+            console.log(value);
+        });
+    </script>
+</body>
+
+</html>

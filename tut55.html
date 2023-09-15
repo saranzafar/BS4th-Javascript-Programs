@@ -1,0 +1,56 @@
+<!-- ---------------------- Ch # 9 ------------------   -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> what happen when promis fulfil </title>
+</head>
+
+<body>
+
+
+    <script>
+        //these al promisis 
+        let p1 = new Promise((resolve, reject) => {
+            console.log("promise is pending");
+            setTimeout(() => {
+                alert("i am aa promise and i am fullfill");
+                resolve(true);
+            }, 5000);
+        });
+        let p2 = new Promise((resolve, reject) => {
+            console.log("promise is pending");
+            setTimeout(() => {
+                alert("i am aa promise and i am Rejected");
+                reject(new Error("i am an error"));
+            }, 5000);
+        });
+        console.log("p1:", p1);
+        console.log("p2:", p2);
+
+        // we can notify errors to user using 'then' and 'catch' 
+
+        //to get the value
+        p1.then((value) => {
+            console.log("the value is", value);
+        })
+        //to catch the error
+        p2.catch((error) => {//error handling in promisis
+            console.log("some error occure in p2", error);
+        })
+
+        //here p2 run value or error
+        p1.then((value) => {
+            console.log("the value of p2 is", value);
+        }, (error) => {
+            console.log("the error in p2 is", error);
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!-- ---------------------- Exercise Ch # 11 Practice set------------------   -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP Practice Set</title>
+</head>
+
+<body>
+    Hi OOPs
+
+    <script>
+        // Qno 1: create a js class to set complex number in constructor
+        // Qno 2: Add 2 complex numbers
+        class complex {
+            constructor(real, imagenary) {
+                this.real = real;
+                this.imagenary = imagenary
+            }
+            add(num) {
+                this.real = this.real + num.real;
+                this.imagenary = this.imagenary + num.imagenary;
+            }
+            get real() {
+                return this._real;
+            }
+            get imagenary() {
+                return this._imagenary
+            }
+            set imagenary(newImagenery) {
+                this._imagenary = newImagenery
+            }
+            set real(newReal) {
+                this._real = newReal
+            }
+
+        }
+
+        let a = new complex(2, 4);
+        a.real = 10;
+        a.imagenary = 10;
+        let b = new complex(6, 8);
+        console.log(a.add(b));
+        console.log(`${a.real} + ${a.imagenary}i`);
+
+        // Qno 3: create a class name 'human' and give him name by overriding
+
+        // class Human {
+        //     constructor(name, favFood) {
+        //         this.name = name
+        //         this.favFood = favFood
+        //     }
+        //     walk() {
+        //         console.log(this.name, "human is walking");
+        //     }
+        // }
+        // class student extends Human {
+        //     walk() {
+        //         console.log(this.name, "Student is walking");
+        //     }
+
+        // }
+
+        // let o = new student("harry", "bhindi");
+        // o.walk();
+        // console.log(o instanceof Human);
+
+    </script>
+</body>
+
+</html>

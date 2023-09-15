@@ -1,0 +1,48 @@
+<!-- ---------------------- Exercise Ch # 11 ------------------   -->
+
+<!-- Method overRiding  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+
+<body>
+    Hi Opps
+
+
+    <script>
+        class Employee {
+            login() {
+                console.log(`Employee has logged in`);
+            }
+            logout() {
+                console.log(`Employee has logged out`);
+            }
+            requestLeaves(leaves) {
+                console.log(`Employee has Request ${leaves + 1} leaves one Extra`);
+            }
+        }
+        class Programmer extends Employee {
+            requestCoffie() {
+                console.log(`Employee has Requested ${x} coffe`);
+            }
+            requestLeaves(leaves) {
+                super.requestLeaves(5)
+                // console.log("one Extra granted");
+                // console.log(`Employee has Request ${leaves + 1} leaves one Extra`);//not good method
+            }
+        }
+
+
+
+        let e = new Programmer();
+        e.login();
+        e.requestLeaves(2);
+    </script>
+</body>
+
+</html>

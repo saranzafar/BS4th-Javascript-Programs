@@ -1,0 +1,41 @@
+<!-- ---------------------- Ch # 12 ------------------   -->
+
+<!-- arrow functions revisit  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+
+<body>
+
+
+    <script>
+        // const sayHello = name => console.log('hello',name);
+        const sayHello = (name, greeting) => console.log(greeting, 'hello', name);
+        sayHello('harry', 'good morning')
+
+        const x = {
+            name: "harry",
+            role: "js developer",
+            exp: "30 years",
+
+            show: function () {
+                let that = this;//alternative
+                console.log(`this name is: ${this.name}`);
+                setTimeout(function () {
+                    //Here 'this' is window object if we use 'function' keyword to print this.name use alternative
+                    // console.log(`this name is: ${this.name}`);
+                    console.log(`this name is: ${this.name}`);//alternative, or simply use arrow function just chill bro
+                }, 2000);
+            }
+        }
+        // console.log(x.name, x.exp);
+        x.show()
+    </script>
+</body>
+
+</html>

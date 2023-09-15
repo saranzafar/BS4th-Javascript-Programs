@@ -1,0 +1,56 @@
+<!-- --------------------- Ch # 7 -----------------------  -->
+
+<!-- Element only navigation  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio WebSite</title>
+    <style>
+        ul {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-evenly;
+            color: black;
+            background-color: gray;
+            list-style: none;
+            padding: 10px;
+        }
+
+        ul li a {
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">Hire Me</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        hi i am good
+    </div>
+
+    <script>
+        let b = document.body;
+        console.log("first child of b is:", b.firstChild);//so it gives first chile that may be text,space,comment or div etc
+        console.log("first element of b is:", b.firstElementChild);//so it gives element it just ignore spaces
+
+
+        const changeBGRed = () => {
+            document.body.firstElementChild.style.background = "red";
+        }
+        changeBGRed();
+    </script>
+</body>
+
+</html>

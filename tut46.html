@@ -1,0 +1,63 @@
+<!-- ---------------------- Ch # 8 ------------------  -->
+
+<!-- - setTimeOut
+- setIntervel -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timing functions in js</title>
+</head>
+
+<body>
+    Hellow world
+
+
+    <script>
+        const sum = (a, b) => {
+            // console.log("yes i am running", (a + b));
+            a + b;
+        }
+
+        // alert("Hellow world");
+        // let time = setTimeout(() => {
+        //     // document.write("hi")
+        // }, 3000);
+        let time = setTimeout(sum, 1000, 12, 8);
+        console.log("timer id is:", time);
+
+        // clearTimeout(time);//clear inter of time, if this is uncomment function is not run
+
+
+        // let time2 = setInterval(() => {
+        //     console.log("hi how are you");
+        // }, 2000);
+
+        // console.log(time2);
+
+
+        // Quick Quiz: by using setInterval use function with argument 
+
+        let x;
+        let y;
+        function multiply() {
+            x = prompt("Enter a number: ")
+            y = prompt("Enter a number: ")
+            x = Number.parseInt(x);
+            y = Number.parseInt(y);
+
+     
+        console.log("the answer is: ", x * y);
+        }
+
+
+        let inter = setInterval( multiply, 3000, x, y);
+
+            // clearInterval(inter);
+    </script>
+</body>
+
+</html>

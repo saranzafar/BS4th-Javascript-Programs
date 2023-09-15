@@ -1,0 +1,152 @@
+<!-- --------------------- Ch # 7 -----------------------  -->
+<!-- Searching in DOM  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <style>
+        img {
+            width: 50%;
+        }
+
+        body {
+            background-color: #eaeff1;
+            font-family: "Raleway", sans-serif;
+        }
+
+        @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap");
+
+        img {
+            width: 20%;
+            border-radius: 12px;
+            height: 214px;
+            object-fit: cover;
+        }
+
+        #container {
+            max-width: 300px;
+            display: inline-block;
+            margin: 0 auto;
+            margin-top: 20vh;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #bacdd8;
+            padding: 8px;
+            border-radius: 12px;
+        }
+
+        .tag {
+            padding: 4px 8px;
+            border: 1px solid #e5eaed;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #788697;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 16px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #7f8c9b;
+            line-height: 150%;
+        }
+
+        button {
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+
+            font-weight: 600;
+            color: #0077ff;
+            background-color: #e0efff;
+            margin: 0 auto;
+            display: block;
+            cursor: pointer;
+        }
+
+        .card__details {
+            padding: 16px 8px 8px 8px;
+        }
+
+        button:focus,
+        button:hover {
+            background-color: #0077ff;
+            color: #e0efff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="card">
+            <div class="card__details">
+                <span class="tag">Nature</span>
+                <span class="tag">Lake</span>
+                <span class="tag">Lake</span>
+                <div class="name">Lago di Braies</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur sodales morbi dignissim sed diam
+                    pharetra
+                    vitae ipsum odio.</p>
+                <button>Read more</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card__details">
+                <span class="tag">Nature</span>
+                <span class="tag">Lake</span>
+                <span class="tag">Lake</span>
+                <div class="name">Lago di Braies</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur sodales morbi dignissim sed diam
+                    pharetra
+                    vitae ipsum odio.</p>
+                <button>Read more</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card__details">
+                <span class="tag">Nature</span>
+                <span class="tag">Lake</span>
+                <span class="tag">Lake</span>
+                <div class="name">Lago di Braies</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur sodales morbi dignissim sed diam
+                    pharetra
+                    vitae ipsum odio.</p>
+                <button>Read more</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let title = document.getElementsByClassName('card')[0];
+        // title.style.color = 'red';
+
+        let container = document.getElementById('container');
+        // container.style.color = 'blue';
+
+        let selector = document.querySelectorAll('.card')//it can also used on tags
+        console.log(selector);
+        // document.querySelectorAll(".card")[0].style.backgroundColor = 'red'
+        selector[0].style.color = 'chocolate'
+        selector[0].style.background = '#bbbbbb'
+
+        console.log(document.getElementsByTagName('p'));
+        console.log(document.getElementsByName('text'));
+
+
+    </script>
+</body>
+
+</html>

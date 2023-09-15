@@ -1,0 +1,118 @@
+<!-- ------------------ Exercise no 2 ------------------ -->
+
+<!-- 
+    Make "Snake Water Gun" Game.
+1. choose one option.
+2. second option is choosen by computer.
+3. Declare Winner.
+4. 3 or 10 chances. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Water Gun</title>
+</head>
+
+<body>
+    Hellow World
+
+    <script>
+
+        let Random;
+        alert("Let's Play Snake, Water and Gun Game");
+        let option;
+        let yPoints = 0;
+        let cPoints = 0;
+        let count = 1;
+
+        do {
+            Random = Math.floor(Math.random() * 3 + 1);
+            option = prompt("Round" + count + "/9 " + "\nChoose One Of them \n1. Snake \n2. Water \n3. Gun\n4. Exit");
+
+            if (option == 'Snake' || option == 'snake' || option == 1) {
+                count++;
+                option = 1;
+                process(Random, option)
+                alert("\nYour Points " + yPoints + " Computer Points " + cPoints)
+            }
+            else if (option == 'water' || option == 'Water' || option == 2) {
+                count++;
+                option = 2;
+                process(Random, option)
+                alert("\nYour Points " + yPoints + " Computer Points " + cPoints)
+            }
+            else if (option == 'gun' || option == 'Gun' || option == 3) {
+                count++;
+                option = 3;
+                process(Random, option)
+                alert("\nYour Points " + yPoints + " Computer Points " + cPoints)
+            }
+
+            else if (option == 4 || option == 'Exit' || option == 'exit' || option == "") {
+                count = 9;
+                console.log("Exiting loop");
+            }
+
+
+        } while (count != 9)
+
+
+        function process(Random, option) {
+
+            if (Random == 1 && option == 1) {
+                alert("You have choosen " + option + " Computer Choose " + Random + "\n Match Draw");
+                count--;
+            }
+            else if (Random == 1 && option == 2) {
+                alert("You have choosen " + option + " Computer Choose " + Random + "\n Computer Win");
+                cPoints++;
+            }
+            else if (Random == 1 && option == 3) {
+                alert("You have choosen " + option + " Computer Choose " + Random + "\n You Win");
+                yPoints++;
+            }
+
+            if (Random == 2 && option == 1) {
+                alert("You have choosen " + option + " Computer Choose " + Random + "\n You Win");
+                yPoints++;
+            }
+            else if (Random == 2 && option == 2) {
+                alert("You have choosen " + option + " Computer Choose " + Random + "\n Match Draw");
+                count--;
+            }
+            else if (Random == 2 && option == 3) {
+                alert("You have choosen " + option + " Computer Choose " + Random + "\n computer Win");
+                cPoints++;
+            }
+
+            if (Random == 3 && option == 1) {
+                alert("You have choosen " + option + " Computer Choose " + Random + "\n computer Win");
+                cPoints++;
+            }
+            else if (Random == 3 && option == 2) {
+                alert("You have choosen " + option + " Computer Choose " + Random + "\n You Win");
+                yPoints++;
+            }
+            else if (Random == 3 && option == 3) {
+                alert("You have choosen " + option + " Computer Choose " + Random + "\n Match Draw");
+                count--;
+            }
+        }
+
+        console.log("inside count 10");
+        if (yPoints > cPoints) {
+            alert("\nYour Points " + yPoints + " Computer Points " + cPoints + "\nCongratulation!!! You Win")
+        }
+        else if (yPoints < cPoints) {
+            alert("\nYour Points " + yPoints + " Computer Points " + cPoints + "\nOooo! You Lose this Match")
+        }
+        else if (yPoints == cPoints) {
+            alert("\nYour Points " + yPoints + " Computer Points " + cPoints + "\nWow! match Draw.")
+        }
+    </script>
+</body>
+
+</html>

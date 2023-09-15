@@ -1,0 +1,58 @@
+<!-- ---------------------- Ch # 12 ------------------   -->
+
+<!-- closure Set  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance JS concepts</title>
+</head>
+
+<body>
+    advance js concepts
+
+    <script>
+        let message = 'message 1'
+        function hellow1() {
+            let message = 'message 2'
+            {
+                let message = 'message 3'
+                console.log('hellow 1', message);
+            }
+            console.log('hellow 1', message);
+
+            let c = function hellow2() {
+                console.log('i am c' + message);
+            }
+            return c;// 'message'/variable distroy but its relexical environment(uski value) return
+        }
+
+        c = hellow1()
+        c();//lexical 
+        function returnfunc() {//clouser: function who return lexical environment
+            const x = () => {
+                let a = 1;
+                console.log(a);
+                const y = () => {
+                    let a = 2;
+                    console.log(a);
+                    const z = () => {
+                        let a = 3;
+                        console.log(a);
+                    }
+                    z()
+                }
+                // a=999 //uncomment it when you comment all 'a' inside y()
+                y()
+            }
+            x()
+            return x;
+        }
+        let a = returnfunc()
+        a()
+    </script>
+</body>
+
+</html>

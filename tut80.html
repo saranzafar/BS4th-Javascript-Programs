@@ -1,0 +1,64 @@
+<!-- ---------------------- Exercise Ch # 11 ------------------   -->
+
+<!-- 
+Consructor OverRiding
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+
+<body>
+    Hi Opps
+
+
+    <script>
+        class Employee {
+
+            constructor(name) {
+                console.log("Constructor1 is here", name);
+            }
+
+            login() {
+                console.log(`Employee has logged in`);
+            }
+            requestLeaves(leaves) {
+                console.log(`Employee has Request ${leaves + 1} leaves one Extra`);
+            }
+        }
+
+        class Programmer extends Employee {
+            //these two lines made automatically,if there is no constructor in childe class
+            // constructor(...args) {
+            //     super(...args)
+            // }
+
+
+
+            constructor(name) {//Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+                super(name)
+                //if you want to make chnages in constructor for child class, make changes here
+            }
+            // constructor(name) {//Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+            //     console.log(`${name}-Programmer constructor is here`);
+            //     this.name = name;
+            // }
+
+            requestLeaves(leaves) {
+                super.requestLeaves(5)
+            }
+        }
+
+
+
+        let e = new Programmer("harry");
+        e.login();
+        e.requestLeaves(2);
+    </script>
+</body>
+
+</html>

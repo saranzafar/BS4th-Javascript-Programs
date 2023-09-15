@@ -1,0 +1,37 @@
+<!-- ---------------------- Ch # 8 ------------------  -->
+
+<!-- Attributes (set,get) -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="first" class="hey" data-game="pubg" data-player="harry">
+        hey i am first container
+    </div>
+    hellow world
+    <script>
+        let first = document.getElementById('first');
+        let a = first.getAttribute("class");
+        // console.log(a);
+        // console.log(first.hasAttribute('class'));//return 'true' only when that attribute exist 
+        // console.log(first.hasAttribute('style'));
+        // first.setAttribute('hidden', true);
+        first.setAttribute('class', 'true class2');//set classes
+
+        // first.removeAttribute('class');
+        console.log(first.attributes);
+
+        // u can make custome attribute 
+        console.log(first.dataset);//adding custome attributes
+        console.log(first.dataset.game);
+        console.log(first.dataset.player);
+    </script>
+</body>
+
+</html>

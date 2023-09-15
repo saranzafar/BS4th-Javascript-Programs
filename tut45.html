@@ -1,0 +1,41 @@
+<!-- ---------------------- Ch # 8 ------------------  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing ClassName and ClassList </title>
+    <style>
+        .yellow {
+            background-color: yellow;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .text-dark {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first" class="yellow text-dark">
+        <span>Hey I am good</span>
+    </div>
+
+    <script>
+        let first = document.getElementById('first');
+        first.className = "text-black red"
+        first.classList.remove('red');//remove class.
+        first.classList.add('red');//add class.
+        first.classList.contains('red');//return 'true' if class exist.
+        first.classList.toggle('red');//if class exist it remove otherwise it add and vice versa.
+
+        console.log(first.classList.contains('red'));
+    </script>
+</body>
+
+</html>

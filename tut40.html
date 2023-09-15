@@ -1,0 +1,101 @@
+<!-- ------------------ Exercise No # 3 ------------------ -->
+
+<!-- 1. take upto 100 jokes.
+2. create a web for them 
+3. randomly show all jokes one-by-one -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jokes</title>
+    <style>
+        *,
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #f3f3f3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            margin: 0;
+            max-width: 1600px;
+            flex-direction: column;
+        }
+
+        .box {
+            background-color: #bbbbbb;
+            height: 30%;
+            width: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1%;
+            filter: drop-shadow(2px 2px 10px black);
+            border-radius: 20px;
+        }
+
+        #box1 {
+            text-align: center;
+        }
+
+        #btn {
+            font-size: 1.5rem;
+            padding: .5%;
+            width: 7%;
+            outline: none;
+            border-radius: 48%;
+            color: white;
+            margin-top: 30px;
+            background-color: gray;
+            filter: drop-shadow(2px 2px 10px black);
+            border: 2px solid gray;
+            transition: .3s;
+        }
+
+        #btn:hover {
+            border: 2px solid rgb(100, 100, 100);
+            background-color: rgb(100, 100, 100);
+        }
+
+        #btn:active {
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="box"><span id="box1">Click to start</span></div>
+
+        <button id="btn" onclick="fJokes()">New</button>
+
+    </div>
+
+
+    <script>
+        let box1 = document.getElementById('box1');
+        let btn = document.getElementById('btn');
+        let rndm;
+        let jokes = ['1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis, impedit!', '2 Lorem consecteturipsum dolor, sit amet consectetur adipisicing elit. Reiciendis,consecteturconsecteturconsectetur impedit!', '3 Lorem ipsum dolor, sitconsectetur amet consectetur adipisicing elit. Reiciendis, impedit!', '4 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis, impedit!', '5 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis, impedit!', '6 Lorem ipsum dolor, sit amet consecteturconsectetur adipisicing elit. Reiciendis, impedit!', '7 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis, impedit!', '8 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciconsecteturconsecteturconsecteturendis, impedit!', '9 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis, impedit!', '10 Loconsecteturconsecteturrem ipsum dolor, sit amet  adipisicing elit. Reiciendis, impedit!',];
+
+
+
+        function fJokes() {
+            rndm = Math.floor(Math.random() * 10);
+            box1.innerHTML = jokes[rndm];
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!-- ---------------------- Ch # 10 ------------------   -->
+
+<!-- 
+- local Storage.
+- Cookie send to server with every req made by browser.
+- u want to save a note of customer here LocalStorage comes.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+
+<body>
+
+
+    <script>
+        // localStorage.setItem('name','Harry')
+        let Key = prompt("Enter Key you want to set");
+        let Value = prompt("Enter value you want to set");
+        localStorage.setItem(Key, Value);
+        console.log(`the value at ${Key} is ${localStorage.getItem(Key)}`);
+
+        if (Key == "red" || Key == "blue") {
+            localStorage.removeItem(Key);
+        }
+        if (Key == "0") {
+            localStorage.clear();
+        }
+
+        // localStorage.key(0)
+        // 'hh'
+        // localStorage.key(1)
+        // 'james'
+        // localStorage.key(2)
+        // 'saran'
+        // localStorage.key(3)
+        // null
+        // localStorage.key(4)
+        // null
+
+        JSON.stringify(obj)//convert json object ot string
+        JSON.parse(string)//convert valid string/json to js object
+
+    </script>
+</body>
+
+</html>

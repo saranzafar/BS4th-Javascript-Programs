@@ -1,0 +1,48 @@
+<!-- ---------------------- Ch # 12 practice set------------------   -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH 12 Practice </title>
+</head>
+
+<body>
+    <script>
+        // qno1: print hellow world after 2 sec 
+        const a = async (text, n = 2) => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(text);
+                }, 2000 * n);
+            })
+        }
+
+
+        (async () => {
+            let text = await a('hellow')
+            console.log(text);
+            text = await a('world')
+            console.log(text);
+        }
+        )()
+
+        function sum(a, b, c) {
+            return a + b + c;
+        }
+
+        // qno2: sum 3 numbers
+        let x = [1, 2, 3]
+        let s = sum(...x)
+        console.log(s);
+
+        function simple(p, r, t) {
+            return (p * r * t) / 100
+        }
+        console.log(simple(1000, 5, 1));//1000 rupay, 5% interest 1 saal k leay
+    </script>
+</body>
+
+</html>

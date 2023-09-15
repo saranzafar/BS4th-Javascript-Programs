@@ -1,0 +1,39 @@
+<!-- ---------------------- Ch # 12 ------------------   -->
+
+<!-- 
+Hoisting: when you declare a variable down it comes up/top automatically
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting</title>
+</head>
+
+<body>
+    hi we are trying to Hoisting
+
+    <script>
+
+        //decliration hoist at the top but initilazion will not hoist, 
+        //and in case of 'let' and 'const' it throw error if we hoist a variable
+        console.log(a);
+        greet()//hoisting
+        greet1()// function expression is not hoist, it throw error
+
+        function greet() {
+            console.log("good morning");
+        }
+        var greet1 = function()  {
+            console.log("good morning");
+        }
+
+        var a = 5;
+        // let a = 5;
+        // const a = 5;
+    </script>
+</body>
+
+</html>

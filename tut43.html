@@ -1,0 +1,38 @@
+<!-- ---------------------- Ch # 8 ------------------  -->
+
+<!-- ways to  insert elements in DOM  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inserting</title>
+</head>
+
+<body>
+    outer
+
+    <div class="container">
+
+        i am start of this container
+        <div id="first">hey i am id first</div>
+        i am end of this container
+        <!-- new way to add in innerHTML is here  -->
+    </div>
+    outer
+    <script>
+        let a = document.getElementsByTagName('div')[0];//old  way to add element in HTML
+        // a.innerHTML = "<h1>hellow i am new</h1>"
+
+        let div = document.createElement('div');
+        div.innerHTML = "<h1>new way</h1>"
+        // a.append(div);//insert before ending of container
+        // a.before(div);//insert at starting of container
+        // a.after(div);//insert after just after ending of container
+        a.replaceWith(div);//replace with whole container
+    </script>
+</body>
+
+</html>

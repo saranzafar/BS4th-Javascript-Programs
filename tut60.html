@@ -1,0 +1,54 @@
+<!-- ---------------------- Ch # 9 ------------------   -->
+
+<!-- 
+- try 
+- catch
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling in JS</title>
+</head>
+
+<body>
+
+
+    <script>
+        setTimeout(() => {
+            console.log("hacking Wifi.........");
+        }, 2000);
+
+        //Error handling
+        try {
+            console.log(rahul);
+        }
+        catch (error) {//catch will ignore if try run successfully
+            console.log("blly blly:", error);
+        }
+
+        setTimeout(() => {
+            console.log("Fetching userName and Password.........");
+        }, 4000);
+        setTimeout(() => {
+            console.log("Wifi Hacked.........");
+        }, 5000);
+
+
+        //if you write setTimeout inside try it throw error because code schedule, use this
+        setTimeout(() => {
+            console.log("trying try");
+            try {
+                console.log(saran);
+            }
+            catch(saran) {
+                console.log("saran is not define:", saran);
+
+            }
+        }, 6000);
+    </script>
+</body>
+
+</html>

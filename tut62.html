@@ -1,0 +1,42 @@
+<!-- ---------------------- Ch # 9 ------------------   -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finally Clause</title>
+</head>
+
+<body>
+
+
+    <script>
+        let func = () => {
+
+            // it is used with try,catch and it always run 
+            try {
+                let a = 0;
+                console.log("Program Run Successfully");
+                // console.log(program);
+                // console.log("Program Run Successfully");
+                return; //so we return from here, but 'Finally' run we can't stop 'Finally'
+            } catch (error) {
+                console.log("this is error");
+                // a = b;//producing Error in catch,this is why finally use
+            }
+            finally {
+                console.log("this is finally");
+                //close the file
+                //exit the loop/program
+                //write to log file
+                //CleanUpProgram
+            }
+            // console.log("this is finally");
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!-- ------------------- Chapter # 6 ------------------- -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>console and types</title>
+</head>
+
+<body>
+    hellow world
+
+    <script>
+        console.log("ht harry");
+
+        /*
+        ----------- types of console functions -----------
+                
+        -> assert
+        -> clear
+        -> context
+        -> count
+        -> countReset
+        -> createTask
+        -> debug
+        -> dir
+        -> dirxml
+        -> error
+        -> group
+        -> groupCollapsed
+        -> groupEnd
+        -> info
+        -> log
+        -> profile
+        -> profileEnd
+        -> table
+        -> time
+        -> timeEnd
+        -> timeLog
+        -> timeStamp
+        -> trace
+        -> warn
+               */
+
+        console.log("hi harry")// console.log return "undefined"
+        console.error("this is error")//use to print error
+        console.assert(5 > 53)//Assertion 'failed' when we give it wrong condition
+        console.assert(5 < 53)// returns 'undefine' when condition is true
+
+        let obj = {
+            name: "saran",
+            rollNo: 5,
+            friend: null,
+            more: "etc"
+        }
+        console.table(obj);
+        console.warn("he please don't drink alchohole");
+        console.info("this is info");
+        console.timeEnd('this is time');
+
+        console.time('forLoop');
+        for (let i = 0; i < 10; i++) {
+            console.log("hi");
+        }
+        console.timeEnd("forLoop");
+
+        
+        console.time('WhileLoop');
+        let i = 0;
+        while (i < 10) {
+            console.log("hi", i, "hellow");
+            i++;
+        }
+        console.timeEnd("WhileLoop");
+    </script>
+</body>
+
+</html>
