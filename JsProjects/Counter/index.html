@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100px;
+            width: 300px;
+        }
+
+        #btn {
+            font-size: 20px;
+            /* border: 2px solid gray; */
+            border-radius: 10px;
+            cursor: pointer;
+            outline: 2px solid black;
+            outline-offset: 2px;
+            background-color: black;
+            color: white;
+            transition: 0.3s;
+            padding: 3px;
+        }
+
+        #btn:active {
+            font-size: 18px;
+            outline-offset: -6px;
+            background-color: gray;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h1 id="para">Counting:0</h1>
+            <button id="btn">Count</button>
+        </div>
+    </div>
+
+    <script>
+        let para = document.getElementById('para');
+        let btn = document.getElementById('btn');
+        let count = 0;
+        btn.addEventListener('click', () => {
+            count++;
+            para.innerHTML = "Counting:" + count;
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Responsive navbar</title>
+    <style>
+        html {
+            background-color: #f3f3f3;
+        }
+
+        .navbar {
+            height: 100vh;
+            width: 200px;
+            background-color: black;
+            transition: .5s;
+            border: 2px solid black;
+            border-radius: 0px 30px 30px 0px;
+        }
+
+        .navbar ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+            font-size: 25px;
+            font-family: serif;
+            list-style: none;
+            padding: 0px 0px 0px 0px;
+        }
+
+        .navbar ul li {
+            margin: 20px 0px;
+            padding: 0px 30px;
+            border-bottom: 2px solid white;
+
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar ul li a:hover {
+            font-weight: bold;
+        }
+
+        .navbar-toggle {
+            border: 2px solid transparent;
+            outline: none;
+            position: sticky;
+            left: 37px;
+            font-size: 26px;
+            background-color: transparent;
+            transition: .5s;
+            transform: rotate(90deg);
+            color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="navbar-toggle" id="navbarToggle">&#9776;</button>
+    <nav class="navbar" id="navigation">
+        <ul>
+            <li> <a href="#">Home</a> </li>
+            <li> <a href="#">Products</a> </li>
+            <li> <a href="#">Services</a> </li>
+            <li> <a href="#">Contact-Us</a> </li>
+        </ul>
+    </nav>
+
+    <script>
+        let btn = document.getElementById('navbarToggle');
+        let navigation = document.getElementById('navigation');
+
+        btn.addEventListener('click', () => {
+
+            console.log("clicked: 1");
+            if (navigation.style.opacity != '0') {
+                btn.style.transform = 'rotate(0deg)';
+                navigation.style.opacity = '0';
+            }
+            else {
+                navigation.style.opacity = '1';
+                btn.style.transform = 'rotate(90deg)';
+            }
+
+        })
+    </script>
+</body>
+
+</html>

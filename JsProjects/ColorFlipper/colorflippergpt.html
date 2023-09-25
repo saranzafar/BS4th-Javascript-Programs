@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #35516d;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .color-box {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Color Flipper</h1>
+        <div class="color-box" id="colorBox"></div>
+        <button id="btnFlip">Flip Color</button>
+    </div>
+
+
+    <script>
+    const colorBox = document.getElementById('colorBox');
+        const btnFlip = document.getElementById('btnFlip');
+
+        const generateRandomColor = () => {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        };
+
+        const changeColor = () => {
+            const randomColor = generateRandomColor();
+            colorBox.style.backgroundColor = randomColor;
+        };
+
+        btnFlip.addEventListener('click', changeColor);
+    </script>
+</body>
+
+</html>
